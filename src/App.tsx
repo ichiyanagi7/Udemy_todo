@@ -17,6 +17,11 @@ const App: React.FC = () => {
     return () => unSub();
   }, []);
 
+  const newTask=(e: React.MouseEvent<HTMLButtonElement>)=>{
+    db.collection("tasks").add({title: input});
+    setInput(""); //再入力に備えて、初期化
+  };
+
 
   return (
     <div className="App">
@@ -31,6 +36,10 @@ const App: React.FC = () => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
         />
       </FormControl>
+      
+      <button disabled={!input} onClick={newTask}>
+        <AddToPhotosIcon />
+      </button>
 
       {tasks.map((task) => (
         <h3 key={task.id}>{task.title}</h3>
