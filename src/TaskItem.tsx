@@ -27,7 +27,7 @@ const TaskItem: React.FC<PROPS> = (props) => {
 
       <ListItem>
         <h2>{props.title}</h2>
-        <Grid container justify = "flex-end">
+        <Grid container justifyContent = "flex-end">
           <TextField
             InputLabelProps={{
               shrink: true,

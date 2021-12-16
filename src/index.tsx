@@ -1,12 +1,22 @@
+//ルート指定を行えるファイル （line:16~17）
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {Route, BrowserRouter} from "react-router-dom";
+import Login from "./Login";
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <>
+        <Route exact path="/" component={App} />
+        <Route exact path="/login" component={Login} />
+      </>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
