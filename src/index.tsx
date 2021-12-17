@@ -1,4 +1,4 @@
-//ルート指定を行えるファイル （line:16~17）
+//ルート指定（line:16~17）
 
 import React from 'react';
 import ReactDOM from 'react-dom';
